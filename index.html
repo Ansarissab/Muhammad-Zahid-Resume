@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Zahid – Full Stack Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-mid: #3d3d38;
+      --ink-light: #6b6b62;
+      --rule: #c8c4b8;
+      --accent: #8b2500;
+      --page: #faf9f6;
+      --cream: #f2f0ea;
+      --ff-body: 'EB Garamond', Georgia, serif;
+      --ff-mono: 'DM Mono', 'Courier New', monospace;
+      --ff-serif: 'Libre Baskerville', Georgia, serif;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--cream);
+      font-family: var(--ff-body);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 40px auto;
+      background: var(--page);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+      padding: 56px 64px 64px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 18px;
+      margin-bottom: 20px;
+    }
+
+    .name {
+      font-family: var(--ff-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .headline {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+    }
+
+    .contact a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact a:hover { color: var(--accent); border-color: var(--accent); }
+
+    .contact span { display: flex; align-items: center; gap: 5px; }
+
+    /* ── SECTIONS ── */
+    section { margin-bottom: 26px; }
+
+    .section-title {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4px 16px;
+      font-size: 0.9rem;
+    }
+
+    .skill-label {
+      font-family: var(--ff-mono);
+      font-size: 0.78rem;
+      color: var(--ink-light);
+      white-space: nowrap;
+      padding-top: 1px;
+    }
+
+    .skill-value { color: var(--ink-mid); }
+
+    /* ── EXPERIENCE ── */
+    .job { margin-bottom: 20px; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 1px;
+    }
+
+    .job-title {
+      font-family: var(--ff-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .job-date {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    ul {
+      padding-left: 1.1em;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    li {
+      font-size: 0.92rem;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+
+    li::marker { color: var(--accent); }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .project {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 14px 16px;
+      border-radius: 2px;
+    }
+
+    .project-title {
+      font-family: var(--ff-serif);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+      color: var(--ink);
+    }
+
+    .project-link {
+      font-family: var(--ff-mono);
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+      word-break: break-all;
+    }
+
+    .project-link:hover { text-decoration: underline; }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .project-stack {
+      font-family: var(--ff-mono);
+      font-size: 0.7rem;
+      color: var(--ink-light);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-item { margin-bottom: 10px; }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .edu-degree {
+      font-family: var(--ff-serif);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .edu-year {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--ink-light);
+    }
+
+    .edu-school {
+      font-size: 0.88rem;
+      color: var(--ink-light);
+      font-style: italic;
+      margin-bottom: 6px;
+    }
+
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .cert-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+    }
+
+    .cert-list li span:last-child {
+      font-family: var(--ff-mono);
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    /* ── SUMMARY ── */
+    .summary {
+      font-size: 0.95rem;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+
+    /* ── PRINT / MEDIA ── */
+    @media print {
+      body { background: white; }
+      .page { box-shadow: none; margin: 0; max-width: 100%; padding: 32px 48px; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 32px 28px; margin: 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .name { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="name">Muhammad Zahid</div>
+    <div class="headline">Full Stack Engineer &nbsp;·&nbsp; Ruby on Rails &nbsp;·&nbsp; DevOps &nbsp;·&nbsp; 5+ Years</div>
+    <div class="contact">
+      <span>+92 3XX-XXXXXXX</span>
+      <span><a href="mailto:zahidensari116@gmail.com">zahidensari116@gmail.com</a></span>
+      <span><a href="https://github.com/Ansarissab" target="_blank">github.com/Ansarissab</a></span>
+      <span><a href="https://linkedin.com/in/zahidensari" target="_blank">linkedin.com/in/zahidensari</a></span>
+      <span>Lahore, Pakistan</span>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section>
+    <div class="section-title">Professional Summary</div>
+    <p class="summary">
+      Full Stack Engineer with 5+ years of experience delivering production-ready web applications for clients across FinTech, eCommerce, fleet management, and SaaS. Specializes as a Ruby on Rails Developer and DevOps Engineer — with a proven record of cutting operational costs, streamlining revenue flows, and shipping reliable systems at scale. Owns projects end-to-end: from architecture and API design to cloud deployment and client handoff.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-value">Ruby, JavaScript, TypeScript, C#, Python</span>
+
+      <span class="skill-label">Frontend</span>
+      <span class="skill-value">Hotwire, Turbo, Stimulus, React, Angular, Tailwind CSS</span>
+
+      <span class="skill-label">Backend</span>
+      <span class="skill-value">Ruby on Rails, Next.js, GraphQL, RESTful APIs, Sidekiq</span>
+
+      <span class="skill-label">Databases</span>
+      <span class="skill-value">PostgreSQL, MySQL, MongoDB, Redis, Firebase, Supabase</span>
+
+      <span class="skill-label">Cloud</span>
+      <span class="skill-value">AWS (S3, EC2), Azure, Heroku, DigitalOcean, Hetzner</span>
+
+      <span class="skill-label">DevOps</span>
+      <span class="skill-value">Kamal, Docker, Kubernetes, Helm, Terraform, Jenkins, GitHub Actions</span>
+
+      <span class="skill-label">Testing</span>
+      <span class="skill-value">RSpec, MiniTest, FactoryBot</span>
+
+      <span class="skill-label">Integrations</span>
+      <span class="skill-value">Stripe, Google OAuth, Slack, BingAI, Twilio, SendGrid</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-title">Professional Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Independent Consultant</span>
+        <span class="job-date">Apr 2022 – Present</span>
+      </div>
+      <div class="job-company">Upwork — Contract Engagements</div>
+      <ul>
+        <li>Reduced administrative overhead by 60% for a 50+ vehicle fleet by architecting an automated booking system and Stripe-integrated payment gateway using Ruby on Rails — eliminating 15+ hours of manual scheduling per week and enabling online revenue collection for the first time.</li>
+        <li>Developed Kleptofinder, a reverse image search platform enabling artists to detect unauthorized use of their creative work online — cutting detection time from days to seconds using BingAI and deployed on Azure with automated CI/CD pipelines.</li>
+        <li>Implemented product listing, order management, and Stripe payment features for Craftfoxes, an eCommerce platform serving 5,000+ active sellers; led a Ruby on Rails version upgrade that improved security and cut technical debt — delivered with zero downtime (AWS, RSpec).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Software Engineer</span>
+        <span class="job-date">Sep 2020 – Apr 2022</span>
+      </div>
+      <div class="job-company">Devsinc</div>
+      <ul>
+        <li>Architected an automated payout and financial reporting system for Commission Smarter, a FinTech platform, using Ruby on Rails and Sidekiq — achieving 99.9% transaction accuracy, eliminating 20+ hours of weekly manual reconciliation, and reducing infrastructure costs by 15% (PostgreSQL, AWS).</li>
+        <li>Reduced average query latency by 35% and server-side errors by 20% across 3 production apps by implementing Redis-based ActiveRecord query caching for GraphQL APIs — improving performance for 1,000+ monthly active users (PostgreSQL).</li>
+        <li>Spearheaded Docker deployments to AWS EC2 with automated CI/CD pipelines, cutting release cycle time and ensuring consistent, zero-error production rollouts across all client projects.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Co-Founder &amp; Technical Lead</span>
+        <span class="job-date">Mar 2019 – Jul 2020</span>
+      </div>
+      <div class="job-company">Takhleeq — Tech Startup (UCP)</div>
+      <ul>
+        <li>Led MVP development from ideation to launch as Co-Founder, acquiring 200+ early adopters and maintaining 99.9% uptime by architecting a scalable AWS infrastructure using EC2, S3, and RDS — owning all technical decisions from stack selection to production deployment.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <div class="section-title">Notable Side Projects</div>
+    <div class="projects-grid">
+      <div class="project">
+        <div class="project-title">Secure Text Sync</div>
+        <a class="project-link" href="https://github.com/Ansarissab/secure-text-sync" target="_blank">github.com/Ansarissab/secure-text-sync</a>
+        <p class="project-desc">Solved cross-device text transfer by designing a serverless, QR code-based sync tool — no login, no install, instant pairing. Fully static, hosted free on GitHub.</p>
+        <div class="project-stack">Stack: HTML, CSS, JavaScript, Firebase</div>
+      </div>
+      <div class="project">
+        <div class="project-title">Privacy-First Image to PDF</div>
+        <a class="project-link" href="https://github.com/Ansarissab/free-secure-image-to-pdf-generator" target="_blank">github.com/Ansarissab/free-secure-image-to-pdf-generator</a>
+        <p class="project-desc">Produced a browser-only image-to-PDF converter that processes all files locally on the client device — no upload, no server, no data exposure.</p>
+        <div class="project-stack">Stack: JavaScript, HTML, CSS</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-title">Education &amp; Certifications</div>
+    <div class="edu-item">
+      <div class="edu-header">
+        <span class="edu-degree">Bachelor of Science in Computer Science</span>
+        <span class="edu-year">Graduated 2020</span>
+      </div>
+      <div class="edu-school">University of Central Punjab (UCP), Lahore</div>
+    </div>
+    <ul class="cert-list">
+      <li>
+        <span>Introduction to Linux — The Linux Foundation</span>
+        <span>Jan 2023</span>
+      </li>
+      <li>
+        <span>Ruby on Rails Certification — TestDome</span>
+        <span>Jul 2022</span>
+      </li>
+    </ul>
+  </section>
+
+</main>
+</body>
+</html>
