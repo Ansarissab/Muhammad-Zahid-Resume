@@ -1,45 +1,243 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light" data-font="serif">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Zahid – Full Stack Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <link rel="icon" type="image/jpeg"
+    href="data:image/png;base64,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" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=DM+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet" />
 
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ─── THEME TOKENS ─── */
     :root {
+      --accent: #8b2500;
+      --ff-body-serif: 'EB Garamond', Georgia, serif;
+      --ff-display-serif: 'Libre Baskerville', Georgia, serif;
+      --ff-body-sans: 'IBM Plex Sans', 'Inter', sans-serif;
+      --ff-display-sans: 'Inter', sans-serif;
+      --ff-mono: 'DM Mono', 'Courier New', monospace;
+      --transition: 0.25s ease;
+    }
+
+    /* LIGHT */
+    [data-theme="light"] {
       --ink: #1a1a18;
       --ink-mid: #3d3d38;
       --ink-light: #6b6b62;
       --rule: #c8c4b8;
-      --accent: #8b2500;
       --page: #faf9f6;
-      --cream: #f2f0ea;
-      --ff-body: 'EB Garamond', Georgia, serif;
-      --ff-mono: 'DM Mono', 'Courier New', monospace;
-      --ff-serif: 'Libre Baskerville', Georgia, serif;
+      --bg: #ede9e0;
+      --card: #f2f0ea;
+      --toolbar-bg: rgba(250, 249, 246, 0.92);
+      --shadow: 0 4px 40px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
     }
 
-    html { font-size: 16px; }
+    /* DARK */
+    [data-theme="dark"] {
+      --ink: #d4d4d4;
+      --ink-mid: #d8d5ca;
+      --ink-light: #7a7668;
+      --rule: #3a3830;
+      --page: ##1d1d1d;
+      --bg: #13120f;
+      --card: #232118;
+      --toolbar-bg: rgba(28, 27, 23, 0.94);
+      --shadow: 0 4px 40px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* FONT TOKENS */
+    [data-font="serif"] {
+      --ff-body: var(--ff-body-serif);
+      --ff-display: var(--ff-display-serif);
+    }
+
+    [data-font="sans"] {
+      --ff-body: var(--ff-body-sans);
+      --ff-display: var(--ff-display-sans);
+    }
+
+    html {
+      font-size: 16px;
+    }
 
     body {
-      background: var(--cream);
+      background: var(--bg);
       font-family: var(--ff-body);
       color: var(--ink);
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
+      transition: background var(--transition), color var(--transition);
     }
 
+    /* ─── FLOATING TOOLBAR ─── */
+    .toolbar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--toolbar-bg);
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 12px 10px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .toolbar-label {
+      font-family: var(--ff-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      text-align: center;
+      margin-bottom: 2px;
+    }
+
+    .toolbar-divider {
+      height: 1px;
+      background: var(--rule);
+      margin: 2px 0;
+    }
+
+    /* Toggle switch */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .toggle-icon {
+      font-size: 0.85rem;
+      line-height: 1;
+      width: 16px;
+      text-align: center;
+    }
+
+    .toggle {
+      position: relative;
+      width: 36px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: var(--rule);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 3px;
+      top: 3px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    input:checked+.slider {
+      background: var(--accent);
+    }
+
+    input:checked+.slider::before {
+      transform: translateX(16px);
+    }
+
+    /* Color swatches */
+    .swatches {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+    }
+
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.15s, border-color 0.15s;
+      flex-shrink: 0;
+    }
+
+    .swatch:hover {
+      transform: scale(1.2);
+    }
+
+    .swatch.active {
+      border-color: var(--ink);
+      transform: scale(1.15);
+    }
+
+    /* Font toggle pill */
+    .font-toggle {
+      display: flex;
+      background: var(--card);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+
+    .font-btn {
+      flex: 1;
+      padding: 4px 8px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 0.7rem;
+      color: var(--ink-light);
+      transition: background 0.15s, color 0.15s;
+      font-family: var(--ff-mono);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .font-btn.active {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* ─── PAGE ─── */
     .page {
       max-width: 820px;
       margin: 40px auto;
       background: var(--page);
-      box-shadow: 0 4px 40px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+      box-shadow: var(--shadow);
       padding: 56px 64px 64px;
+      transition: background var(--transition), box-shadow var(--transition);
     }
 
-    /* ── HEADER ── */
+    /* ─── HEADER ─── */
     header {
       border-bottom: 2px solid var(--ink);
       padding-bottom: 18px;
@@ -47,13 +245,14 @@
     }
 
     .name {
-      font-family: var(--ff-serif);
+      font-family: var(--ff-display);
       font-size: 2.4rem;
       font-weight: 700;
       letter-spacing: -0.01em;
       color: var(--ink);
       line-height: 1;
       margin-bottom: 6px;
+      transition: font-family var(--transition);
     }
 
     .headline {
@@ -63,6 +262,7 @@
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 12px;
+      transition: color var(--transition);
     }
 
     .contact {
@@ -80,12 +280,15 @@
       transition: border-color 0.2s, color 0.2s;
     }
 
-    .contact a:hover { color: var(--accent); border-color: var(--accent); }
+    .contact a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
-    .contact span { display: flex; align-items: center; gap: 5px; }
-
-    /* ── SECTIONS ── */
-    section { margin-bottom: 26px; }
+    /* ─── SECTIONS ─── */
+    section {
+      margin-bottom: 26px;
+    }
 
     .section-title {
       font-family: var(--ff-mono);
@@ -96,9 +299,10 @@
       margin-bottom: 10px;
       padding-bottom: 5px;
       border-bottom: 1px solid var(--rule);
+      transition: color var(--transition);
     }
 
-    /* ── SKILLS ── */
+    /* ─── SKILLS ─── */
     .skills-grid {
       display: grid;
       grid-template-columns: auto 1fr;
@@ -114,11 +318,18 @@
       padding-top: 1px;
     }
 
-    .skill-value { color: var(--ink-mid); }
+    .skill-value {
+      color: var(--ink-mid);
+    }
 
-    /* ── EXPERIENCE ── */
-    .job { margin-bottom: 20px; }
-    .job:last-child { margin-bottom: 0; }
+    /* ─── EXPERIENCE ─── */
+    .job {
+      margin-bottom: 20px;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
 
     .job-header {
       display: flex;
@@ -130,10 +341,11 @@
     }
 
     .job-title {
-      font-family: var(--ff-serif);
+      font-family: var(--ff-display);
       font-size: 1rem;
       font-weight: 700;
       color: var(--ink);
+      transition: font-family var(--transition);
     }
 
     .job-date {
@@ -163,9 +375,12 @@
       line-height: 1.5;
     }
 
-    li::marker { color: var(--accent); }
+    li::marker {
+      color: var(--accent);
+      transition: color var(--transition);
+    }
 
-    /* ── PROJECTS ── */
+    /* ─── PROJECTS ─── */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -173,18 +388,20 @@
     }
 
     .project {
-      background: var(--cream);
+      background: var(--card);
       border: 1px solid var(--rule);
       padding: 14px 16px;
       border-radius: 2px;
+      transition: background var(--transition), border-color var(--transition);
     }
 
     .project-title {
-      font-family: var(--ff-serif);
+      font-family: var(--ff-display);
       font-weight: 700;
       font-size: 0.9rem;
       margin-bottom: 3px;
       color: var(--ink);
+      transition: font-family var(--transition);
     }
 
     .project-link {
@@ -195,9 +412,12 @@
       display: block;
       margin-bottom: 6px;
       word-break: break-all;
+      transition: color var(--transition);
     }
 
-    .project-link:hover { text-decoration: underline; }
+    .project-link:hover {
+      text-decoration: underline;
+    }
 
     .project-desc {
       font-size: 0.85rem;
@@ -212,8 +432,10 @@
       color: var(--ink-light);
     }
 
-    /* ── EDUCATION ── */
-    .edu-item { margin-bottom: 10px; }
+    /* ─── EDUCATION ─── */
+    .edu-item {
+      margin-bottom: 10px;
+    }
 
     .edu-header {
       display: flex;
@@ -224,9 +446,10 @@
     }
 
     .edu-degree {
-      font-family: var(--ff-serif);
+      font-family: var(--ff-display);
       font-weight: 700;
       font-size: 0.95rem;
+      transition: font-family var(--transition);
     }
 
     .edu-year {
@@ -264,163 +487,318 @@
       white-space: nowrap;
     }
 
-    /* ── SUMMARY ── */
+    /* ─── SUMMARY ─── */
     .summary {
       font-size: 0.95rem;
       color: var(--ink-mid);
       line-height: 1.65;
     }
 
-    /* ── PRINT / MEDIA ── */
+    /* ─── PRINT ─── */
     @media print {
-      body { background: white; }
-      .page { box-shadow: none; margin: 0; max-width: 100%; padding: 32px 48px; }
+      .toolbar {
+        display: none;
+      }
+
+      body {
+        background: white;
+      }
+
+      .page {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+        padding: 32px 48px;
+      }
     }
 
-    @media (max-width: 640px) {
-      .page { padding: 32px 28px; margin: 0; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .name { font-size: 1.9rem; }
+    @media (max-width: 680px) {
+      .page {
+        padding: 32px 24px;
+        margin: 0 0 60px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .name {
+        font-size: 1.85rem;
+      }
+
+      .toolbar {
+        top: auto;
+        bottom: 16px;
+        right: 12px;
+        left: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 16px;
+        padding: 10px 14px;
+      }
+
+      .toolbar-divider {
+        width: 1px;
+        height: 24px;
+        margin: 0 2px;
+      }
     }
   </style>
 </head>
+
 <body>
-<main class="page">
 
-  <!-- HEADER -->
-  <header>
-    <div class="name">Muhammad Zahid</div>
-    <div class="headline">Full Stack Engineer &nbsp;·&nbsp; Ruby on Rails &nbsp;·&nbsp; DevOps &nbsp;·&nbsp; 5+ Years</div>
-    <div class="contact">
-      <span>+92 3XX-XXXXXXX</span>
-      <span><a href="mailto:zahidensari116@gmail.com">zahidensari116@gmail.com</a></span>
-      <span><a href="https://github.com/Ansarissab" target="_blank">github.com/Ansarissab</a></span>
-      <span><a href="https://linkedin.com/in/zahidensari" target="_blank">linkedin.com/in/zahidensari</a></span>
-      <span>Lahore, Pakistan</span>
+  <!-- ─── FLOATING TOOLBAR ─── -->
+  <div class="toolbar" role="toolbar" aria-label="Customisation controls">
+
+    <div class="toolbar-label">Appearance</div>
+
+    <!-- Dark mode toggle -->
+    <div class="toggle-row">
+      <span class="toggle-icon" title="Light">☀️</span>
+      <label class="toggle" aria-label="Toggle dark mode">
+        <input type="checkbox" id="darkToggle" />
+        <span class="slider"></span>
+      </label>
+      <span class="toggle-icon" title="Dark">🌙</span>
     </div>
-  </header>
 
-  <!-- SUMMARY -->
-  <section>
-    <div class="section-title">Professional Summary</div>
-    <p class="summary">
-      Full Stack Engineer with 5+ years of experience delivering production-ready web applications for clients across FinTech, eCommerce, fleet management, and SaaS. Specializes as a Ruby on Rails Developer and DevOps Engineer — with a proven record of cutting operational costs, streamlining revenue flows, and shipping reliable systems at scale. Owns projects end-to-end: from architecture and API design to cloud deployment and client handoff.
-    </p>
-  </section>
+    <div class="toolbar-divider"></div>
 
-  <!-- SKILLS -->
-  <section>
-    <div class="section-title">Technical Skills</div>
-    <div class="skills-grid">
-      <span class="skill-label">Languages</span>
-      <span class="skill-value">Ruby, JavaScript, TypeScript, C#, Python</span>
-
-      <span class="skill-label">Frontend</span>
-      <span class="skill-value">Hotwire, Turbo, Stimulus, React, Angular, Tailwind CSS</span>
-
-      <span class="skill-label">Backend</span>
-      <span class="skill-value">Ruby on Rails, Next.js, GraphQL, RESTful APIs, Sidekiq</span>
-
-      <span class="skill-label">Databases</span>
-      <span class="skill-value">PostgreSQL, MySQL, MongoDB, Redis, Firebase, Supabase</span>
-
-      <span class="skill-label">Cloud</span>
-      <span class="skill-value">AWS (S3, EC2), Azure, Heroku, DigitalOcean, Hetzner</span>
-
-      <span class="skill-label">DevOps</span>
-      <span class="skill-value">Kamal, Docker, Kubernetes, Helm, Terraform, Jenkins, GitHub Actions</span>
-
-      <span class="skill-label">Testing</span>
-      <span class="skill-value">RSpec, MiniTest, FactoryBot</span>
-
-      <span class="skill-label">Integrations</span>
-      <span class="skill-value">Stripe, Google OAuth, Slack, BingAI, Twilio, SendGrid</span>
+    <!-- Font toggle -->
+    <div class="toolbar-label">Font</div>
+    <div class="font-toggle">
+      <button class="font-btn active" id="btnSerif" onclick="setFont('serif')">Serif</button>
+      <button class="font-btn" id="btnSans" onclick="setFont('sans')">Sans</button>
     </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section>
-    <div class="section-title">Professional Experience</div>
+    <div class="toolbar-divider"></div>
 
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Independent Consultant</span>
-        <span class="job-date">Apr 2022 – Present</span>
+    <!-- Accent color swatches -->
+    <div class="toolbar-label">Accent</div>
+    <div class="swatches" id="swatches">
+      <div class="swatch active" style="background:#8b2500" data-color="#8b2500" title="Crimson"
+        onclick="setAccent(this)"></div>
+      <div class="swatch" style="background:#1a5276" data-color="#1a5276" title="Navy" onclick="setAccent(this)"></div>
+      <div class="swatch" style="background:#145a32" data-color="#145a32" title="Forest" onclick="setAccent(this)">
       </div>
-      <div class="job-company">Upwork — Contract Engagements</div>
-      <ul>
-        <li>Reduced administrative overhead by 60% for a 50+ vehicle fleet by architecting an automated booking system and Stripe-integrated payment gateway using Ruby on Rails — eliminating 15+ hours of manual scheduling per week and enabling online revenue collection for the first time.</li>
-        <li>Developed Kleptofinder, a reverse image search platform enabling artists to detect unauthorized use of their creative work online — cutting detection time from days to seconds using BingAI and deployed on Azure with automated CI/CD pipelines.</li>
-        <li>Implemented product listing, order management, and Stripe payment features for Craftfoxes, an eCommerce platform serving 5,000+ active sellers; led a Ruby on Rails version upgrade that improved security and cut technical debt — delivered with zero downtime (AWS, RSpec).</li>
+      <div class="swatch" style="background:#4a235a" data-color="#4a235a" title="Plum" onclick="setAccent(this)"></div>
+      <div class="swatch" style="background:#784212" data-color="#784212" title="Amber" onclick="setAccent(this)"></div>
+    </div>
+
+  </div>
+
+  <!-- ─── RESUME ─── -->
+  <main class="page">
+
+    <header>
+      <div class="name">Muhammad Zahid</div>
+      <div class="headline">Full Stack Engineer &nbsp;·&nbsp; Ruby on Rails &nbsp;·&nbsp; DevOps &nbsp;·&nbsp; 5+ Years
+      </div>
+      <div class="contact">
+        <span>+92 3XX-XXXXXXX</span>
+        <span><a href="mailto:zahidensari116@gmail.com">zahidensari116@gmail.com</a></span>
+        <span><a href="https://github.com/Ansarissab" target="_blank" rel="noopener">github.com/Ansarissab</a></span>
+        <span><a href="https://linkedin.com/in/zahidensari" target="_blank"
+            rel="noopener">linkedin.com/in/zahidensari</a></span>
+        <span>Lahore, Pakistan</span>
+      </div>
+    </header>
+
+    <section aria-label="Professional Summary">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary">
+        Full Stack Engineer with 5+ years of experience delivering production-ready web applications for clients across
+        FinTech, eCommerce, fleet management, and SaaS. Specializes as a Ruby on Rails Developer and DevOps Engineer —
+        with a proven record of cutting operational costs, streamlining revenue flows, and shipping reliable systems at
+        scale. Owns projects end-to-end: from architecture and API design to cloud deployment and client handoff.
+      </p>
+    </section>
+
+    <section aria-label="Technical Skills">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <span class="skill-label">Languages</span>
+        <span class="skill-value">Ruby, JavaScript, TypeScript, C#, Python</span>
+
+        <span class="skill-label">Frontend</span>
+        <span class="skill-value">Hotwire, Turbo, Stimulus, React, Angular, Tailwind CSS</span>
+
+        <span class="skill-label">Backend</span>
+        <span class="skill-value">Ruby on Rails, Next.js, GraphQL, RESTful APIs, Sidekiq</span>
+
+        <span class="skill-label">Databases</span>
+        <span class="skill-value">PostgreSQL, MySQL, MongoDB, Redis, Firebase, Supabase</span>
+
+        <span class="skill-label">Cloud</span>
+        <span class="skill-value">AWS (S3, EC2), Azure, Heroku, DigitalOcean, Hetzner</span>
+
+        <span class="skill-label">DevOps</span>
+        <span class="skill-value">Kamal, Docker, Kubernetes, Helm, Terraform, Jenkins, GitHub Actions</span>
+
+        <span class="skill-label">Testing</span>
+        <span class="skill-value">RSpec, MiniTest, FactoryBot</span>
+
+        <span class="skill-label">Integrations</span>
+        <span class="skill-value">Stripe, Google OAuth, Slack, BingAI, Twilio, SendGrid</span>
+      </div>
+    </section>
+
+    <section aria-label="Professional Experience">
+      <div class="section-title">Professional Experience</div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Independent Consultant</span>
+          <span class="job-date">Apr 2022 – Present</span>
+        </div>
+        <div class="job-company">Upwork — Contract Engagements</div>
+        <ul>
+          <li>Reduced administrative overhead by 60% for a 50+ vehicle fleet by architecting an automated booking system
+            and Stripe-integrated payment gateway using Ruby on Rails — eliminating 15+ hours of manual scheduling per
+            week and enabling online revenue collection for the first time.</li>
+          <li>Developed Kleptofinder, a reverse image search platform enabling artists to detect unauthorized use of
+            their creative work online — cutting detection time from days to seconds using BingAI and deployed on Azure
+            with automated CI/CD pipelines.</li>
+          <li>Implemented product listing, order management, and Stripe payment features for Craftfoxes, an eCommerce
+            platform serving 5,000+ active sellers; led a Ruby on Rails version upgrade that improved security and cut
+            technical debt — delivered with zero downtime (AWS, RSpec).</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Software Engineer</span>
+          <span class="job-date">Sep 2020 – Apr 2022</span>
+        </div>
+        <div class="job-company">Devsinc</div>
+        <ul>
+          <li>Architected an automated payout and financial reporting system for Commission Smarter, a FinTech platform,
+            using Ruby on Rails and Sidekiq — achieving 99.9% transaction accuracy, eliminating 20+ hours of weekly
+            manual reconciliation, and reducing infrastructure costs by 15% (PostgreSQL, AWS).</li>
+          <li>Reduced average query latency by 35% and server-side errors by 20% across 3 production apps by
+            implementing Redis-based ActiveRecord query caching for GraphQL APIs — improving performance for 1,000+
+            monthly active users (PostgreSQL).</li>
+          <li>Spearheaded Docker deployments to AWS EC2 with automated CI/CD pipelines, cutting release cycle time and
+            ensuring consistent, zero-error production rollouts across all client projects.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-header">
+          <span class="job-title">Co-Founder &amp; Technical Lead</span>
+          <span class="job-date">Mar 2019 – Jul 2020</span>
+        </div>
+        <div class="job-company">Takhleeq — Tech Startup (UCP)</div>
+        <ul>
+          <li>Led MVP development from ideation to launch as Co-Founder, acquiring 200+ early adopters and maintaining
+            99.9% uptime by architecting a scalable AWS infrastructure using EC2, S3, and RDS — owning all technical
+            decisions from stack selection to production deployment.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-label="Notable Side Projects">
+      <div class="section-title">Notable Side Projects</div>
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-title">Secure Text Sync</div>
+          <a class="project-link" href="https://github.com/Ansarissab/secure-text-sync" target="_blank"
+            rel="noopener">github.com/Ansarissab/secure-text-sync</a>
+          <p class="project-desc">Solved cross-device text transfer by designing a serverless, QR code-based sync tool —
+            no login, no install, instant pairing. Fully static, hosted free on GitHub.</p>
+          <div class="project-stack">Stack: HTML, CSS, JavaScript, Firebase</div>
+        </div>
+        <div class="project">
+          <div class="project-title">Privacy-First Image to PDF</div>
+          <a class="project-link" href="https://github.com/Ansarissab/free-secure-image-to-pdf-generator"
+            target="_blank" rel="noopener">github.com/Ansarissab/free-secure-image-to-pdf-generator</a>
+          <p class="project-desc">Produced a browser-only image-to-PDF converter that processes all files locally on the
+            client device — no upload, no server, no data exposure.</p>
+          <div class="project-stack">Stack: JavaScript, HTML, CSS</div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Education and Certifications">
+      <div class="section-title">Education &amp; Certifications</div>
+      <div class="edu-item">
+        <div class="edu-header">
+          <span class="edu-degree">Bachelor of Science in Computer Science</span>
+          <span class="edu-year">Graduated 2020</span>
+        </div>
+        <div class="edu-school">University of Central Punjab (UCP), Lahore</div>
+      </div>
+      <ul class="cert-list">
+        <li>
+          <span>Introduction to Linux — The Linux Foundation</span>
+          <span>Jan 2023</span>
+        </li>
+        <li>
+          <span>Ruby on Rails Certification — TestDome</span>
+          <span>Jul 2022</span>
+        </li>
       </ul>
-    </div>
+    </section>
 
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Software Engineer</span>
-        <span class="job-date">Sep 2020 – Apr 2022</span>
-      </div>
-      <div class="job-company">Devsinc</div>
-      <ul>
-        <li>Architected an automated payout and financial reporting system for Commission Smarter, a FinTech platform, using Ruby on Rails and Sidekiq — achieving 99.9% transaction accuracy, eliminating 20+ hours of weekly manual reconciliation, and reducing infrastructure costs by 15% (PostgreSQL, AWS).</li>
-        <li>Reduced average query latency by 35% and server-side errors by 20% across 3 production apps by implementing Redis-based ActiveRecord query caching for GraphQL APIs — improving performance for 1,000+ monthly active users (PostgreSQL).</li>
-        <li>Spearheaded Docker deployments to AWS EC2 with automated CI/CD pipelines, cutting release cycle time and ensuring consistent, zero-error production rollouts across all client projects.</li>
-      </ul>
-    </div>
+  </main>
 
-    <div class="job">
-      <div class="job-header">
-        <span class="job-title">Co-Founder &amp; Technical Lead</span>
-        <span class="job-date">Mar 2019 – Jul 2020</span>
-      </div>
-      <div class="job-company">Takhleeq — Tech Startup (UCP)</div>
-      <ul>
-        <li>Led MVP development from ideation to launch as Co-Founder, acquiring 200+ early adopters and maintaining 99.9% uptime by architecting a scalable AWS infrastructure using EC2, S3, and RDS — owning all technical decisions from stack selection to production deployment.</li>
-      </ul>
-    </div>
-  </section>
+  <script defer>
+    const html = document.documentElement;
 
-  <!-- PROJECTS -->
-  <section>
-    <div class="section-title">Notable Side Projects</div>
-    <div class="projects-grid">
-      <div class="project">
-        <div class="project-title">Secure Text Sync</div>
-        <a class="project-link" href="https://github.com/Ansarissab/secure-text-sync" target="_blank">github.com/Ansarissab/secure-text-sync</a>
-        <p class="project-desc">Solved cross-device text transfer by designing a serverless, QR code-based sync tool — no login, no install, instant pairing. Fully static, hosted free on GitHub.</p>
-        <div class="project-stack">Stack: HTML, CSS, JavaScript, Firebase</div>
-      </div>
-      <div class="project">
-        <div class="project-title">Privacy-First Image to PDF</div>
-        <a class="project-link" href="https://github.com/Ansarissab/free-secure-image-to-pdf-generator" target="_blank">github.com/Ansarissab/free-secure-image-to-pdf-generator</a>
-        <p class="project-desc">Produced a browser-only image-to-PDF converter that processes all files locally on the client device — no upload, no server, no data exposure.</p>
-        <div class="project-stack">Stack: JavaScript, HTML, CSS</div>
-      </div>
-    </div>
-  </section>
+    // ── Persist preferences ──
+    const prefs = {
+      get: (k, d) => { try { return localStorage.getItem(k) || d; } catch { return d; } },
+      set: (k, v) => { try { localStorage.setItem(k, v); } catch { } }
+    };
 
-  <!-- EDUCATION -->
-  <section>
-    <div class="section-title">Education &amp; Certifications</div>
-    <div class="edu-item">
-      <div class="edu-header">
-        <span class="edu-degree">Bachelor of Science in Computer Science</span>
-        <span class="edu-year">Graduated 2020</span>
-      </div>
-      <div class="edu-school">University of Central Punjab (UCP), Lahore</div>
-    </div>
-    <ul class="cert-list">
-      <li>
-        <span>Introduction to Linux — The Linux Foundation</span>
-        <span>Jan 2023</span>
-      </li>
-      <li>
-        <span>Ruby on Rails Certification — TestDome</span>
-        <span>Jul 2022</span>
-      </li>
-    </ul>
-  </section>
+    // ── Apply saved prefs on load ──
+    const savedTheme = prefs.get('theme', 'light');
+    const savedFont = prefs.get('font', 'sans');
+    const savedAccent = prefs.get('accent', '#8b2500');
 
-</main>
+    applyTheme(savedTheme);
+    applyFont(savedFont);
+    applyAccent(savedAccent);
+
+    // ── Dark mode toggle ──
+    let darkToggle = document.getElementById('darkToggle');
+    darkToggle.addEventListener('change', () => {
+      applyTheme(darkToggle.checked ? 'dark' : 'light', darkToggle);
+    });
+
+    function applyTheme(theme, darkToggle) {
+      html.setAttribute('data-theme', theme);
+      this.darkToggle.checked = theme === 'dark';
+      prefs.set('theme', theme);
+    }
+
+    // ── Font toggle ──
+    function setFont(f) {
+      applyFont(f);
+      prefs.set('font', f);
+    }
+
+    function applyFont(f) {
+      html.setAttribute('data-font', f);
+      document.getElementById('btnSerif').classList.toggle('active', f === 'serif');
+      document.getElementById('btnSans').classList.toggle('active', f === 'sans');
+    }
+
+    // ── Accent colour ──
+    function setAccent(el) {
+      applyAccent(el.dataset.color);
+      prefs.set('accent', el.dataset.color);
+    }
+
+    function applyAccent(color) {
+      document.documentElement.style.setProperty('--accent', color);
+      document.querySelectorAll('.swatch').forEach(s => {
+        s.classList.toggle('active', s.dataset.color === color);
+      });
+    }
+  </script>
 </body>
+
 </html>
